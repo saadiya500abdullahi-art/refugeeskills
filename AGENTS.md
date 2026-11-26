@@ -1,4 +1,5 @@
 <!-- LOVABLE:BEGIN -->
+
 > [!IMPORTANT]
 > This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
 > published git history — force pushing, or rebasing/amending/squashing commits
@@ -27,4 +28,12 @@ use the editor.
   `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
+
 <!-- LOVABLE:END -->
+
+## App architecture
+
+- Keep the prototype entirely browser-local through DemoProvider; the requested MVP must not create accounts, publish profiles or send requests.
+- Keep each content page as a TanStack leaf route with its own metadata; shared navigation and demo state live in the root shell.
+- Keep sample data and privacy/assessment rules in passport-data with tests; a self-assessment is never independent verification.
+- Store evidence filenames only in this prototype; document contents must not be silently uploaded or persisted.
